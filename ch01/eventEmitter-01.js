@@ -3,6 +3,9 @@
  */
 'use strict';
 
+// this is not yet implemented in node.js 6.2.1 that I am currently using...
+//import EventEmitter from 'events';
+
 const EventEmitter = require('events').EventEmitter;
 
 /**
@@ -11,10 +14,10 @@ const EventEmitter = require('events').EventEmitter;
  * @constructor
  */
 const Counter = function(init){
-    this.increment = function () {
+    this.increment = () => {
         init++;
         this.emit('incremented', init);
-    }
+    };
 };
 
 // prototypes adding EventEmitter to be able to listen to events
@@ -24,9 +27,7 @@ Counter.prototype = new EventEmitter();
 const counter = new Counter(10);
 
 //creates the callback to print the current count value
-const callback = function(count){
-    console.log(count);
-};
+const callback = (count) => console.log(count);
 
 // adds the listener to react to 'incremented' events emitted.
 counter.addListener('incremented', callback);

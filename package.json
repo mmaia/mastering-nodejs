@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mmaia/mastering-nodejs.git"
   },
-  "author": "",
+  "author": "Marcos Maia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmaia/mastering-nodejs/issues"
